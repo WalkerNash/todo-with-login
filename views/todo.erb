@@ -1,0 +1,18 @@
+<h1>Welcome, <%= @user.username %></h1>
+<p>Your user id is <%= @user.id %></p>
+<section>
+  <h3>Your Lists</h3>
+  <ul>
+    <% @user.lists.each do |list| %>
+      <li>
+        <a href="/todo/<%= list.id %>">
+        <%= list.title %>
+      </a>
+      </li>
+    <% end %>
+  </ul>
+</section>
+
+<section>
+  <a href="/todo/new">Add a list</a>
+</section>
